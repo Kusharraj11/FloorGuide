@@ -23,7 +23,7 @@ function App() {
   }
   return <main>
     <header><a className="brand" href="/">F<span>FloorGuide</span></a><span className="local">LOCAL DOCUMENT COPILOT</span></header>
-    <section className="intro"><span className="eyebrow">HOSUR PLANT / SUPERVISOR WORKSPACE</span><h1>Your documents.<br/><em>Clear answers.</em></h1><p>Ask about inspections, maintenance, or safety procedures.<br/>Every answer comes back to the source.</p></section>
+    <section className="intro"><span className="eyebrow">FLOORGUIDE / SUPERVISOR WORKSPACE</span><h1>Your documents.<br/><em>Clear answers.</em></h1><p>Ask about inspections, maintenance, or safety procedures.<br/>Every answer comes back to the source.</p></section>
     <form onSubmit={ask}>
       <label htmlFor="question">What would you like to know?</label>
       <div className="input-row"><input id="question" value={question} onChange={e => setQuestion(e.target.value)} maxLength={2000} placeholder="e.g. What should I do when alarm AL-104 appears?" required disabled={busy}/><button disabled={busy || !question.trim()}>{busy ? 'Finding answer…' : 'Ask question ↗'}</button></div>
