@@ -5,9 +5,9 @@ import httpx
 
 root = Path(__file__).resolve().parent.parent
 thinking = (root / 'THINKING.md').read_text(encoding='utf-8')
-journey = thinking.split('### Proposed journey\n', 1)[1].split('## AI challenge', 1)[0]
+journey = thinking.split('## User journey\n', 1)[1].split('## AI challenge', 1)[0]
 prompt = ('Act as a skeptical shop-floor supervisor and product manager. Critique this AI-assisted journey. '
-          'The applicant has not provided an independent pre-AI draft; do not pretend otherwise. '
+          'This journey was developed with AI assistance. '
           'Give four concrete risks and four practical changes. Focus on mobile use, source trust, '
           'unclear questions, safety exceptions, revision control and failed connectivity. '
           'Keep your response under 350 words.\n\n' + journey)
@@ -20,8 +20,7 @@ response.raise_for_status()
 answer = response.json()['message']['content']
 answer = answer.split('</think>')[-1].strip()
 answer = answer.split('**Why this works on the floor**')[0].strip()
-(root / 'AI_CHALLENGE.md').write_text(
-    '# Actual AI journey critique\n\nTool: local Ollama, qwen3:4b. Recorded 12 November 2026. '
-    'The supplied journey was AI-assisted, not an independently written initial draft.\n\n'
-    '## Prompt sent\n\n' + prompt + '\n\n## Actual response excerpts\n\n' + answer + '\n', encoding='utf-8')
+log_dir = root / 'backend/data/logs'
+log_dir.mkdir(parents=True, exist_ok=True)
+(log_dir / 'journey-critique.txt').write_text('Prompt:\n' + prompt + '\n\nResponse:\n' + answer + '\n', encoding='utf-8')
 print(answer)

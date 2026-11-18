@@ -132,14 +132,13 @@ Mode: include superseded revisions for this comparison.
 
 **Actual app answer:** In Rev 03, the incoming inspection report was paper-based and retained for 2 years [4]. In Rev 04, the report is digital (QF-07A) and retained for 5 years [3].
 
-Sources: QC-SOP-014_Rev03_Incoming_Material_Inspection.pdf, page 1, QC-SOP-014_Rev04_Incoming_Material_Inspection.pdf, page 2, QC-SOP-014_Rev04_Incoming_Material_Inspection.pdf, page 2
+Sources: QC-SOP-014_Rev03_Incoming_Material_Inspection.pdf, page 1, QC-SOP-014_Rev04_Incoming_Material_Inspection.pdf, page 2
 
 ### 5. What is the recommended spindle bearing replacement interval in hours for the TX-200?
 
 **Actual app answer:** I couldn't find an answer in the provided documents.
 
 Sources: None; the requested specification is absent from the supplied documents.
-
 ## Use from a phone on the same Wi-Fi
 
 Run `.\start.ps1 -Lan` from the project directory, then open `http://<laptop-private-IP>:8000` on the phone. Find the Wi-Fi IPv4 address with `ipconfig`. Both devices must be on the same network. The UI and API share port 8000, so no frontend URL or CORS change is needed. Ollama stays on laptop loopback.
