@@ -1,4 +1,4 @@
-# THINKING
+# FloorGuide — Design Notes
 
 ## Understand the user
 
@@ -33,7 +33,7 @@ This approach helped me concentrate on credible sources and current procedures.
 
 I also included revision-aware search. The normal queries will have access to the most current version of the document found within the provided PDF files. Previous revisions are only included if the user chooses the history feature.
 
-In another instance, Rev 03 and Rev 04 have two distinct locations for waste material that is rejected. An incorrect location should not be given to the supervisor simply because that paragraph answered the query. The app provides revision indicators to help the user compare revisions if necessary. In a real-life scenario, this would link up to the approved document list in QMS.
+In another instance, Rev 03 and Rev 04 have two distinct locations for rejected material. An incorrect location should not be given to the supervisor simply because that paragraph answered the query. The app provides revision indicators to help the user compare revisions if necessary. In a real-life scenario, this would link up to the approved document list in QMS.
 
 ## Final reflection
 

@@ -1,9 +1,21 @@
-# BiztelAI Document Copilot
+# FloorGuide
 
-A local FastAPI + React app for questions over the company PDFs. Answers use Ollama and show source documents, revisions and pages. Missing facts receive an explicit not-found response.
+A local FastAPI + React app for questions about manufacturing SOPs, maintenance manuals and safety procedures. Answers use Ollama and show source documents, revisions and pages. Missing facts receive an explicit not-found response.
+
+I built FloorGuide to help shop-floor supervisors find information without searching through multiple PDFs. It runs locally with FastAPI, React and Ollama. The included PDFs describe a fictional manufacturing plant and are used as demo data.
+
+## Features
+
+- Ask questions in a single-page React interface.
+- Read answers with source PDFs, page numbers and document revisions.
+- Search current revisions by default, or include older revisions for comparisons.
+- Get a clear not-found response when the documents do not contain the answer.
+- Use the app from a phone on the same Wi-Fi as the host laptop.
+
+## Project structure
 
 ```text
-BiztelAI/
+FloorGuide/
 ├── backend/
 │   ├── app/
 │   │   ├── main.py           # API, PDF serving, production UI
@@ -81,7 +93,7 @@ cd backend
 
 The evaluation writes `backend/evaluation-results.json` with the actual ten responses, timings and sources. Keyword checks are a regression aid, not a factuality score; review source support manually. The first five questions come from the supplied sample sheet; the other five test sampling thresholds, missing MTC, current quarantine/escalation, revision comparison and a missing bearing-replacement interval.
 
-The revision-aware workflow, rationale, model tradeoffs and limitations are explained in [THINKING.md](THINKING.md). This is a local assessment app, without multi-user authentication or public hosting. Current means latest among supplied PDFs; verify controlled procedures in QMS.
+The revision-aware workflow, rationale, model tradeoffs and limitations are explained in [THINKING.md](THINKING.md). This is a personal project for local use, without multi-user authentication or public hosting. Current means latest among supplied PDFs; verify controlled procedures in QMS.
 
 ## Troubleshooting
 

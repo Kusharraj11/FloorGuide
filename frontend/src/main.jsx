@@ -22,7 +22,7 @@ function App() {
     finally { setBusy(false); }
   }
   return <main>
-    <header><a className="brand" href="/">B<span>BiztelAI</span></a><span className="local">LOCAL DOCUMENT COPILOT</span></header>
+    <header><a className="brand" href="/">F<span>FloorGuide</span></a><span className="local">LOCAL DOCUMENT COPILOT</span></header>
     <section className="intro"><span className="eyebrow">HOSUR PLANT / SUPERVISOR WORKSPACE</span><h1>Your documents.<br/><em>Clear answers.</em></h1><p>Ask about inspections, maintenance, or safety procedures.<br/>Every answer comes back to the source.</p></section>
     <form onSubmit={ask}>
       <label htmlFor="question">What would you like to know?</label>
